@@ -1,0 +1,362 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+*,
+*::before,
+*::after{ box-sizing: inherit;}
+
+*:root{
+    --color-black: #000;
+    --cser:  hsl(235, 45%, 61%);
+    --sales: #f1c65b;
+    --operations: orangered;
+    --operations-rgb: 255, 69, 0;
+    --finance: rgb(74, 207, 129);
+    --finance-rgb: 74, 207, 129;
+   --marketing: hsl(264, 62%, 48%);
+    --management: rgb(17, 17, 197);
+    --management-rgb: 17, 17, 197;
+    --hr: #ffa500;
+}
+
+html{
+    font-size: 62.5%; /* 1rem */
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body{
+    color: black;
+    font-family: sans-serif;
+}
+
+/****************LAYOUT*********************/
+/******************************************/
+
+.container{
+    display: flex;
+    padding: 1rem 2rem;
+    min-height: 100vh;
+}
+
+.section-menu{
+    flex:0 0 4%;
+    background-color: rgb(67, 109, 165);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard{
+    flex: 1;
+    background-color: rgb(231, 231, 231);
+    padding: 2rem 3.5rem;
+}
+
+/************SIDEBAR************/
+.menu__icon,.icon{
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 100;
+    text-align: center;
+    margin: 1.5rem;
+    padding: 1rem;
+    border-radius: 7px;
+}
+
+.icon-menu{
+    display: block;
+}
+
+.icon__plus{
+    background-color: rgba(39, 39, 39, 0.144);
+    font-size: 2.5rem;
+}
+
+.icon__checkmark{
+    background-color: #eebf4a;
+}
+
+.icon-first{
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));
+    opacity: 0.8;
+}
+
+.icon-chevron-thin-left{
+    margin-bottom: 1rem;
+}
+.last-icon-box{
+    border-top: 2px solid #ffffff0e;
+    /* opacity: 0.5; */
+}
+
+/***********All task summary sidebar***********/
+
+.section-task{
+    align-self: stretch;
+    background-color: rgba(211, 211, 243, 0.705);
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 15%;
+}
+
+.task__heading{
+    font-size: 2rem;
+    padding: 3rem 1.5rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.025), rgba(0, 0, 0, 0.025));
+}
+
+.task{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+.black{
+    background-color: var(--color-black);
+    height: 2rem;
+    width: auto;
+}
+
+.task span{
+    color: #fff;
+    width: 2.5rem;
+    height: 2rem;
+    padding: .5rem 0;
+    /* padding-left: .7rem; */
+    border-radius: 40%;
+    text-align: center;
+    overflow: visible;
+}
+
+/****** used to set task-span bg-colors *******/
+.management-task span{
+    background-color: var(--management);
+}
+.sales-task span{
+    background-color: var(--sales);
+}
+.operations-task span{
+    background-color: var(--operations);
+}
+.marketing-task span{
+    background-color: var(--marketing);
+}
+
+.finance-task span{
+    background-color: var(--finance);
+}
+
+.cus_service-task span{
+    background-color: var(--cser);
+}
+.hr-task span{
+    background-color: var(--hr);
+}
+
+
+/***********MAIN DASHBOARD*************/
+/*************************************/
+
+.user-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type="search"]{
+    border: none;
+    outline:none;
+    background-color:rgb(231, 231, 231);
+}
+
+input::placeholder{
+    color: #afafaf;
+    font-size: 1.5rem;
+}
+
+.icon-board{
+    font-size: 1.5rem;
+    color: #afafaf;
+    background-color: #fff;
+    margin: 0 1rem;
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+.box{
+    display: flex;
+}
+
+.noti{
+    position: relative;
+}
+.noti::after{
+    content: "";
+    position: absolute;
+    top: -10%;
+    right: 15%;
+    background-color: red;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.user-photo-box{
+    padding: 0 0 0 1rem;
+    border-left: 1px solid #afafaf;
+}
+.user-photo{
+    height: auto;
+    width: 3.5rem;
+    text-align: center;
+    border-radius: 50%;
+    display: block;  
+}
+
+.dashboard__heading{
+    font-size: 2rem;
+    margin: 2rem 0;
+}
+
+.icons-box{
+    float: right;
+}
+
+.icon-grid{
+    color: #fff;
+    background-color: rgb(17, 17, 197);
+}
+
+    /************TILES SECTION******************/
+    /******************************************/
+.tiles{
+    margin: 5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+}
+
+/*******************************
+used to set font color and border top color
+**********************************/
+
+div[class~="management"]{
+    color: var(--management);
+   }
+
+div[class~="sales"]{
+ color: var(--sales);
+}
+
+[class~="operations"]{
+    color: var(--operations);
+}
+
+[class~="marketing"]{
+    color: var(--marketing);
+}
+
+[class~="finance"]{
+    color: var(--finance);
+}
+
+[class~="cus-serv"]{
+    color: var(--cser);
+}
+
+[class~="hr"]{
+    color: var(--hr);
+}
+
+/*******END******/
+
+.tiles-box{
+    padding: 1.5rem;
+    background-color: #fff;
+    flex: 0 0 22.5%;
+    border-top: 2px solid currentColor;
+    border-radius: 3px;
+    margin-right: 2rem;
+    margin-top: 2rem;
+}
+
+.tiles__heading{
+    font-size: 1.5rem;
+    padding: 1rem;
+    display: inline-block;
+    border-radius: 3px;
+}
+
+/** used to set tiles head box color **/
+h3[class~="management"]{
+    background-color: rgba(var(--management-rgb), 0.1);
+   }
+
+h3[class~="operations"]{
+    background-color: rgba(var(--operations-rgb), 0.1);
+}
+
+
+h3[class~="finance"]{
+    background-color: rgba(var(--finance-rgb), 0.1);
+}
+
+.tiles__text{
+    font-size: 1.3rem;
+    color: initial;
+    margin: 1.5rem 0;
+    text-align: justify;
+}
+
+.tile-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.icons-tile-box{
+    color: #ddd;
+}
+
+
+
+.tiles-img{
+    width: 3rem;
+    height: auto;
+    border-radius: 50%;
+}
+
+.tiles-img-box{
+    display: flex;
+    align-items: center;
+}
+
+.icon__num{
+    margin: .5rem;
+}
+
+.icons-tile-box .icon-attachment{
+    margin-right: .5rem;
+    font-size: 1.3rem;
+}
+
+.tiles-img-box > *:not(:first-child){
+    margin-left: -1.35rem;
+    /* border: 1px solid #fff; */
+}
+
+.tiles-img-box .icon-plus{
+        font-size: 1.5rem;
+        padding: 1rem;
+        color: var(--management);
+        background-color: #e6e6e6;
+        border-radius: 50%;
+        align-self: stretch;
+}
